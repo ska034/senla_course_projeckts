@@ -1,1 +1,0 @@
-# senla_course_projeckts
