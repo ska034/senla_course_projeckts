@@ -2,6 +2,6 @@ package eu.senla.task3;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("xvczxv");
+        System.out.println("323123");
     }
 }
