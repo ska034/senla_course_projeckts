@@ -1,30 +1,35 @@
 package eu.senla.task4;
 
 public class Arrays {
-    public static void firstarray(){
+
+    public static void firstarray() {
         final String letters = "ABCDEFGHIKLMNOPQRSTVXYZ";
         int letterslength = letters.length();
-        String [][] array = new String[10][10];
+        String[][] array = new String[10][10];
         int count = 0;
 
-        String [] diagonal_main = new String[10];
-        String [] diagonal_side = new String[10];
+        String[] diagonal_main = new String[10];
+        String[] diagonal_side = new String[10];
+
+        String[] diagonal_all = new String[20];
+
+        String number = "1132";
+        String number2 = "sdfsdf";
 
 // Инициализируем основную матрицу
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
 
-                String lettersrandom ="";
+                String lettersrandom = "";
                 for (int k = 0; k < 6; k++) {
-                    int random = (int) (Math.random()*23);
+                    int random = (int) (Math.random() * 23);
                     lettersrandom += (letters.charAt(random));
                 }
 
-                int DoubleOrString = (int) (Math.random()*2);
-                if (count % 3 == 0){
-                    array[i][j] = (String.valueOf(Math.random()*10)).substring(0,6);
-                }
-                else {
+                int DoubleOrString = (int) (Math.random() * 2);
+                if (count % 3 == 0) {
+                    array[i][j] = (String.valueOf(Math.random() * 10)).substring(0, 6);
+                } else {
                     array[i][j] = lettersrandom;
                 }
                 count++;
@@ -33,36 +38,47 @@ public class Arrays {
         }
 
 // Выводим основную матрицу, и инициализируем массивы из диагоналей
-        for (int i = 0, k =0, l = 0, m = 1; i < array.length; i++, k++,l++,m++) {
+        for (int i = 0, k = 0, l = 0, m = 1; i < array.length; i++, k++, l++, m++) {
             for (int j = 0; j < array[i].length; j++) {
-                if (i == j){
+                if (i == j) {
                     diagonal_main[k] = array[i][j];
                 }
-                if (j == array.length - m){
+                if (j == array.length - m) {
                     diagonal_side[l] = array[i][j];
                 }
                 System.out.print(array[i][j] + " ");
             }
             System.out.println();
         }
-
-// Выводим диагонали
+// Объединяем массивы диагоналей в один массив
+        for (int i = 0; i < 10; i++) {
+            diagonal_all[i] = diagonal_main[i];
+            diagonal_all[i + 10] = diagonal_side[i];
+        }
+// Выводим диагонали и единый массив
         System.out.println();
         System.out.print("diagonal_main: ");
-        for (String x:diagonal_main) {
+        for (String x : diagonal_main) {
             System.out.print(x + " ");
         }
         System.out.println();
         System.out.print("diagonal_side: ");
-        for (String x:diagonal_side) {
+        for (String x : diagonal_side) {
             System.out.print(x + " ");
         }
-
+        System.out.println();
+        System.out.println();
+        System.out.print("diagonal_all: ");
+        for (String x : diagonal_all) {
+            System.out.print(x + " ");
+        }
     }
+// Распределяем строки на double & string
+
 
 
     public static void secondarray(){
-        int [][] array= new int [10][10];
+        int [][] array = new int [10][10];
         int a = 1;
 
 
