@@ -9,6 +9,7 @@ public class Main {
     public static void main(String[] args) {
         Port BigPort = new Port(5);
         BigPort.createPort();
+        System.out.println(123);
 
 //        Ships Korsar = new Ships(1);
 //        Ships Korsar2 = new Ships(2);
